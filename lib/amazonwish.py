@@ -17,7 +17,8 @@ class Profile():
         params = config.countryParams(country)
         return params
 
-    def __init__(self, params, id):
+    def __init__(self, id, country):
+        params = self.readConfig(country)
         self._download(params, id)
 
     def _download(self, params, id):
@@ -63,7 +64,8 @@ class Wishlist():
         params = config.countryParams(country)
         return params
 
-    def __init__(self, params, id):
+    def __init__(self, id, country):
+        params = self.readConfig(country)
         self._download(params, id)
         
     def _download(self, params, id):
